@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Helloworld from './components/Helloworld';
+import HelloworldFn from './components/Helloworld_fn';
+import Conditions from "./components/Conditions";
+import Loop from "./components/Loop";
+import Form from "./components/Form";
+import FetchData from "./components/FetchData";
 
 function App() {
+  function clickMe(args){
+    alert("You click me in App() and " + args);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        This is my header
       </header>
+      <h1>Hello World in App()</h1>
+      {/*<Helloworld name="John" age="25" clickMe={clickMe} />*/}
+      {/*<HelloworldFn  name="Peter" age="42" clickMe={clickMe}/>*/}
+      {/*<Conditions />*/}
+        <Loop />
+        <Form />
+        <FetchData />
+      <footer>
+        This is my Footer
+      </footer>
     </div>
   );
 }
