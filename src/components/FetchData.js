@@ -3,11 +3,11 @@ import React, {useState} from 'react';
 function FetchData(){
     const [posts, setPosts] = useState([]);
 
-    function getPosts(){
+    function getPosts(limit){
         fetch("http://jsonplaceholder.typicode.com/posts")
             .then(response => response.json())
-            .then(data => {
-                setPosts(data);
+            .then((data) => {
+                setPosts(data.slice(0, limit));
             });
     }
 
@@ -17,8 +17,8 @@ function FetchData(){
 
     return (
         <div>
-            <button onClick={getPosts}>Fetch</button>
-            <button onClick={()=> setPosts([])} >Clear</button>
+            <button onClick={()=> getPosts(10)}>Fetch</button>
+            <button onClick={clearPosts} >Clear</button>
             <ul>
                 {
                     posts.map((post, index) => {
