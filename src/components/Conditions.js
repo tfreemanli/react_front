@@ -11,7 +11,7 @@ function Conditions(){
         <div>
             <h2>Condition: </h2>
             <p>Name: {name}</p>
-            <input type="button" value="change" onClick={changeMe} />
+            <input type="button" value="change" className={'btn btn-primary'} onClick={changeMe} />
         </div>
     );
 }

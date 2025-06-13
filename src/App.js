@@ -6,6 +6,9 @@ import Loop from "./components/Loop";
 import Form from "./components/Form";
 import FetchData from "./components/FetchData";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Menu from "./components/Menu";
+import Counter from "./components/Counter";
+import FetchData2 from "./components/FetchData2";
 
 function App() {
   function clickMe(args){
@@ -16,24 +19,20 @@ function App() {
       <header>
         This is my header
       </header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/HelloworldFn">HelloworldFn</a></li>
-                <li><a href="/condition">Condition</a></li>
-                <li><a href="/loop">Loop</a></li>
-                <li><a href="/form">Form</a></li>
-                <li><a href="/fetchdata">Fetch</a></li>
-            </ul>
-        </nav>
+        <Menu />
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Helloworld name="John" age="25" clickMe={clickMe} />} />
                 <Route path="/HelloworldFn" element={<HelloworldFn  name="Peter" age="42" clickMe={clickMe}/>} />
-                <Route path="condition" element={<Conditions />} />
-                <Route path="loop" element={<Loop />} />
-                <Route path="form" element={<Form />} />
-                <Route path="fetch" element={<FetchData />} />
+                <Route path="/condition" element={<Conditions />} />
+                <Route path="/loop" element={<Loop />} />
+                <Route path="/form" element={<Form />} />
+                <Route path="/fetch" element={<FetchData />} />
+                <Route path="/count" element={<Counter />} />
+                <Route path="/fetchdata2" element={<FetchData2 />} />
+                {/*<Route path="/register" element={<Register />} />*/}
+                {/*<Route path="/login" element={<Login />} />*/}
+                {/*<Route path="/logout" element={<Logout />} />*/}
             </Routes>
         </BrowserRouter>
       <footer>
